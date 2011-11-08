@@ -19,10 +19,10 @@
           <plugin>
              <groupId>com.klocwork.ps</groupId> 
              <artifactId>kwmaven</artifactId>
-             <configuration>  <== kw:run goal 실행시 실행되도록 하는 설정
+             <configuration>
                  <buildspec_filename>${KWINJECT_OUT_PATH}</buildspec_filename> 
              </configuration>
-             <executions>     <== 빌드시 동시 실행되도록 하는 설정
+             <executions>
                 <execution>
                    <phase>validate</phase> 
                    <goals>

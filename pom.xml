@@ -18,6 +18,11 @@
 				http://undercover.googlecode.com/svn/maven/repository
 			</url>
 		</pluginRepository>
+    <pluginRepository>
+      <id>atlassian-m2-repository</id>
+      <name>Atlassian Maven 2.x Repository</name>
+      <url>http://repository.atlassian.com/maven2</url>
+    </pluginRepository>
 	</pluginRepositories>
 
 	<distributionManagement>
@@ -45,8 +50,36 @@
 					<target>1.5</target>
 				</configuration>
 			</plugin>
+      <plugin>
+        <groupId>com.atlassian.maven.plugins</groupId>
+        <artifactId>maven-clover2-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <licenseLocation>../../../clover.license</licenseLocation>
+          <generateHtml>true</generateHtml>
+          <generateXml>true</generateXml>
+          <generatePdf>false</generatePdf>
+        </configuration>
+      </plugin>
 		</plugins>
 	</build>
+  <reporting>
+    <plugins>
+        <plugin>
+            <groupId>com.atlassian.maven.plugins</groupId>
+            <artifactId>maven-clover2-plugin</artifactId>
+            <version>3.0.2</version>
+            <configuration>
+                <includesTestSourceRoots>true</includesTestSourceRoots>
+                <licenseLocation>../../../clover.license</licenseLocation>
+                <encoding>UTF-8</encoding>
+                <jdk>1.5</jdk>
+            </configuration>
+        </plugin>
+    </plugins>
+</reporting>
+
+   
 	<repositories>
 		<repository>
 			<id>com.springsource.repository.bundles.release</id>

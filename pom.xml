@@ -11,6 +11,31 @@
 		<downloadSources>true</downloadSources>
 	</properties>
 
+  <profiles>
+ <profile>
+  <id>klocwork</id>
+   <build>
+   <plugins>
+    <plugin>
+     <groupId>com.klocwork.ps</groupId>
+     <artifactId>kwmaven</artifactId>
+     <executions>
+      <execution>
+       <configuration>
+        <buildspec_filename>${KWINJECT_OUT_PATH}</buildspec_filename>
+       </configuration>
+       <phase>validate</phase>
+       <goals>
+        <goal>run</goal>
+       </goals>
+      </execution>
+     </executions>
+    </plugin>
+   </plugins>
+  </build>
+ </profile>
+</profiles>
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>undercover</id>

@@ -136,7 +136,7 @@
 	<version>2.3.3</version>
 	<configuration>
 		<encoding>UTF-8</encoding>
-		<configLocation>${basedir}/checkstyle-UTF8(ver1.2).xml</configLocation >
+		<configLocation>${basedir}/checkstyle-UTF8.xml</configLocation >
 	</configuration>
 </plugin>
     </plugins>

@@ -1,6 +1,7 @@
 package com.googlecode.goodsamples.springbatch.basic;
 
 import static org.mockito.Mockito.*;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class NameWriterTest {
 
 		O.write(names);
 
-    Assert.assertEquals(78354,hash_code);
+    assertEquals(78354,hash_code);
 		verify(nameDAO).update(name);
 	}
 

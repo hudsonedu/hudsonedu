@@ -23,11 +23,11 @@ public class NameWriterTest {
 		List<Name> names = new ArrayList<Name>();
 		Name name = new Name(id(1), name("Min"));
     int hash_code = name.hashCode();
-     System.out.println("HASHCODE : " + hash_code);
 		names.add(name);
 
 		O.write(names);
 
+    Assert.assertEquals(78354,hash_code);
 		verify(nameDAO).update(name);
 	}
 

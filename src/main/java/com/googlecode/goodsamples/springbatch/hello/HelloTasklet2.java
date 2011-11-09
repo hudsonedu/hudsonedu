@@ -16,5 +16,44 @@ public class HelloTasklet2 implements Tasklet {
                 log.info("Hello");
                 return RepeatStatus.FINISHED;
         }
+        
+          public int duplicateCode(){
+          int i = 0;
+            if(i==1){
+              log.info("AAA");
+            }else if(i != 0){
+              if(i == 0){
+                  log.info("AAA");
+              }else{
+                  log.info("BBB");
+              }
+            }
+          }
 
+          public int duplicateCode2(){
+          int i = 0;
+            if(i==1){
+              log.info("AAA");
+            }else if(i != 0){
+              if(i == 0){
+                  log.info("AAA");
+              }else{
+                  log.info("BBB");
+              }
+            }
+          }
+          
+          
+          public int duplicateCode3(){
+          int i = 0;
+            if(i==1){
+              log.info("AAA");
+            }else if(i != 0){
+              if(i == 0){
+                  log.info("AAA");
+              }else{
+                  log.info("BBB");
+              }
+            }
+          }
 }

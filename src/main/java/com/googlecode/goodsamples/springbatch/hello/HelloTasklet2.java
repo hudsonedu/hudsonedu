@@ -21,39 +21,50 @@ public class HelloTasklet2 implements Tasklet {
           int i = 0;
             if(i==1){
               log.info("AAA");
+              return 1;
             }else if(i != 0){
               if(i == 0){
                   log.info("AAA");
+                  return 2;
               }else{
                   log.info("BBB");
+                  return 3;
               }
             }
+            return 0;
           }
 
           public int duplicateCode2(){
           int i = 0;
             if(i==1){
               log.info("AAA");
+              return 1;
             }else if(i != 0){
               if(i == 0){
                   log.info("AAA");
+                  return 2;
               }else{
                   log.info("BBB");
+                  return 3;
               }
             }
-          }
-          
+            return 0;
+          }          
           
           public int duplicateCode3(){
           int i = 0;
             if(i==1){
               log.info("AAA");
+              return 1;
             }else if(i != 0){
               if(i == 0){
                   log.info("AAA");
+                  return 2;
               }else{
                   log.info("BBB");
+                  return 3;
               }
             }
+            return 0;
           }
 }

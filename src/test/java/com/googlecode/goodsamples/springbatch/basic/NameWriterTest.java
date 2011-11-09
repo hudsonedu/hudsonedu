@@ -22,6 +22,8 @@ public class NameWriterTest {
 	public void givenNamesShouldBePersistedToDatabase() throws Exception {
 		List<Name> names = new ArrayList<Name>();
 		Name name = new Name(id(1), name("Min"));
+    int hash_code = name.hashCode();
+     System.out.println("HASHCODE : " + hash_code);
 		names.add(name);
 
 		O.write(names);

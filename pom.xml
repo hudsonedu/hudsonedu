@@ -11,48 +11,52 @@
 		<downloadSources>true</downloadSources>
 	</properties>
 
-  <profiles>
- <profile>
-    <id>klocwork</id> 
-    <build>
-       <plugins>
-          <plugin>
-             <groupId>com.klocwork.ps</groupId> 
-             <artifactId>kwmaven</artifactId>
-             <configuration>
-                 <buildspec_filename>${KWINJECT_OUT_PATH}</buildspec_filename> 
-             </configuration>
-             <executions>
-                <execution>
-                   <phase>validate</phase> 
-                   <goals>
-                      <goal>run</goal> 
-                   </goals>
-                 </execution>
-              </executions>
-           </plugin>
-        </plugins>
-    </build>
-</profile>
-</profiles>
-
+	<!--
+	<profiles>
+		<profile>
+			<id>klocwork</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.klocwork.ps</groupId>
+						<artifactId>kwmaven</artifactId>
+						<configuration>
+							<buildspec_filename>${KWINJECT_OUT_PATH}</buildspec_filename>
+						</configuration>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+ 	
+	</profiles>
+	-->
 	<pluginRepositories>
+	<!-- 
 		<pluginRepository>
 			<id>undercover</id>
 			<url>
 				http://undercover.googlecode.com/svn/maven/repository
-			</url>
+                        </url>
 		</pluginRepository>
-    <pluginRepository>
-      <id>atlassian-m2-repository</id>
-      <name>Atlassian Maven 2.x Repository</name>
-      <url>http://repository.atlassian.com/maven2</url>
-    </pluginRepository>
-    <pluginRepository>
-           <id>nhn repository</id>
-           <name>NHN Maven2 Repository</name>
-           <url>http://repo.nhncorp.com/maven2</url>
-       </pluginRepository>
+ 	-->
+		<pluginRepository>
+			<id>atlassian-m2-repository</id>
+			<name>Atlassian Maven 2.x Repository</name>
+			<url>http://repository.atlassian.com/maven2</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>nhn repository</id>
+			<name>NHN Maven2 Repository</name>
+			<url>http://repo.nhncorp.com/maven2</url>
+		</pluginRepository>
 	</pluginRepositories>
 
 	<distributionManagement>
@@ -60,13 +64,13 @@
 			<id>good-samples</id>
 			<url>
 				dav:https://good-samples.googlecode.com/svn/maven/repository
-			</url>
+                        </url>
 		</repository>
 		<snapshotRepository>
 			<id>good-samples-snapshot</id>
 			<url>
 				dav:https://good-samples.googlecode.com/svn/maven/snapshot-repository
-			</url>
+                        </url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -80,96 +84,88 @@
 					<target>1.5</target>
 				</configuration>
 			</plugin>
-      <plugin>
-        <groupId>com.atlassian.maven.plugins</groupId>
-        <artifactId>maven-clover2-plugin</artifactId>
-        <version>3.0.2</version>
-        <configuration>
-          <licenseLocation>../../../clover.license</licenseLocation>
-          <generateHtml>true</generateHtml>
-          <generateXml>true</generateXml>
-          <generatePdf>false</generatePdf>
-        </configuration>
-      </plugin>
-      <plugin>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId> maven-nhnstyle-plugin </artifactId>
-	<version>2.3.3</version>
-	<dependencies>
-		<dependency>
-			<groupId>com.nhncorp.quality</groupId>
-			<artifactId>nhn-checkstyle</artifactId>
-			<version>1.2-p1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.nhncorp.quality</groupId>
-			<artifactId>checkstyle</artifactId>
-			<version>4.4-p7</version>
-		</dependency>
-	</dependencies>
-</plugin>
-<plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-resources-plugin</artifactId>
-	<configuration>
-		<encoding>UTF-8</encoding>
-	</configuration>
-</plugin>
+			<!-- 
+			<plugin>
+				<groupId>com.atlassian.maven.plugins</groupId>
+				<artifactId>maven-clover2-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<licenseLocation>../../../clover.license</licenseLocation>
+					<generateHtml>true</generateHtml>
+					<generateXml>true</generateXml>
+					<generatePdf>false</generatePdf>
+				</configuration>
+			</plugin>
+			-->
+			<!-- 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId> maven-nhnstyle-plugin </artifactId>
+				<version>2.3.3</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.nhncorp.quality</groupId>
+						<artifactId>nhn-checkstyle</artifactId>
+						<version>1.2-p3</version>
+					</dependency>
+					<dependency>
+						<groupId>com.nhncorp.quality</groupId>
+						<artifactId>checkstyle</artifactId>
+						<version>4.4-p7</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-  <reporting>
-    <plugins>
-        <plugin>
-            <groupId>com.atlassian.maven.plugins</groupId>
-            <artifactId>maven-clover2-plugin</artifactId>
-            <version>3.0.2</version>
-            <configuration>
-                <includesTestSourceRoots>true</includesTestSourceRoots>
-                <licenseLocation>../../../clover.license</licenseLocation>
-                <encoding>UTF-8</encoding>
-                <jdk>1.5</jdk>
-            </configuration>
-        </plugin>
-        <plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId> maven-nhnstyle-plugin </artifactId>
-	<version>2.3.3</version>
-	<configuration>
-		<encoding>UTF-8</encoding>
-		<configLocation>${basedir}/checkstyle-UTF8.xml</configLocation >
-	</configuration>
-</plugin>
-<plugin>
-    <groupId>org.codehaus.mojo</groupId>
-    <artifactId>findbugs-maven-plugin</artifactId>
-    <version>2.3</version>
-    <configuration>
-        <findbugsXmlOutput>true</findbugsXmlOutput>
-        <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-    </configuration>
-</plugin>
-<plugin>
-    <groupId>org.codehaus.mojo</groupId>
-    <artifactId>cobertura-maven-plugin</artifactId>
-    <configuration>
-        <formats>
-            <format>xml</format>
-        </formats>
-    </configuration>
-</plugin>
-    </plugins>
-</reporting>
+	<reporting>
+		<plugins>
+			<!-- 
+			<plugin>
+				<groupId>com.atlassian.maven.plugins</groupId>
+				<artifactId>maven-clover2-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<includesTestSourceRoots>true</includesTestSourceRoots>
+					<licenseLocation>../../../clover.license</licenseLocation>
+					<encoding>UTF-8</encoding>
+					<jdk>1.5</jdk>
+				</configuration>
+			</plugin>
+			-->
+			<!-- 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId> maven-nhnstyle-plugin </artifactId>
+				<version>2.3.3</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<configLocation>${basedir}/checkstyle_english_utf8_v1.2.xml</configLocation>
+				</configuration>
+			</plugin>
+			-->
+		</plugins>
+	</reporting>
 
-   
+
 	<repositories>
 		<repository>
 			<id>com.springsource.repository.bundles.release</id>
-			<name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+			<name>SpringSource Enterprise Bundle Repository - SpringSource Bundle
+				Releases</name>
 			<url>http://repository.springsource.com/maven/bundles/release</url>
 		</repository>
 		<repository>
 			<id>com.springsource.repository.bundles.external</id>
-			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle
+				Releases</name>
 			<url>http://repository.springsource.com/maven/bundles/external</url>
 		</repository>
 		<repository>
@@ -181,8 +177,8 @@
 			<id>google-maven-repository</id>
 			<name>Google Maven Repository</name>
 			<url>
-					http://google-maven-repository.googlecode.com/svn/repository/
-			</url>
+				http://google-maven-repository.googlecode.com/svn/repository/
+                        </url>
 		</repository>
 	</repositories>
 

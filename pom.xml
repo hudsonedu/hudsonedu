@@ -39,24 +39,20 @@
 	</profiles>
 	-->
 	<pluginRepositories>
-	<!-- 
+	<!--
 		<pluginRepository>
-			<id>undercover</id>
-			<url>
-				http://undercover.googlecode.com/svn/maven/repository
-                        </url>
-		</pluginRepository>
- 	-->
-		<pluginRepository>
-			<id>atlassian-m2-repository</id>
+			<id>clover-repository</id>
 			<name>Atlassian Maven 2.x Repository</name>
 			<url>http://repository.atlassian.com/maven2</url>
 		</pluginRepository>
+	-->
+	<!-- 
 		<pluginRepository>
 			<id>nhn repository</id>
 			<name>NHN Maven2 Repository</name>
 			<url>http://repo.nhncorp.com/maven2</url>
 		</pluginRepository>
+		-->
 	</pluginRepositories>
 
 	<distributionManagement>
@@ -147,7 +143,7 @@
 				<version>2.3.3</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<configLocation>${basedir}/checkstyle-UTF8.xml</configLocation>
+					<configLocation>${basedir}/checkstyle_english_utf8_v1.2.xml</configLocation>
 				</configuration>
 			</plugin>
 			-->

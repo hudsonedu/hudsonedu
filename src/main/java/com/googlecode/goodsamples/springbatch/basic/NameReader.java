@@ -8,6 +8,8 @@ import org.springframework.batch.item.UnexpectedInputException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.DataInputStream;
+
 @Component
 public class NameReader implements ItemReader<Name> {
 	@Autowired
@@ -28,6 +30,15 @@ public class NameReader implements ItemReader<Name> {
 		return rows.poll();
 	}
 public int 한글_함수_이름(){
+// make a klocwork bug
+    DataInputStream DISCHECKSTYLE_ERROR = new DataInputStream(System.in);
+    if(DISCHECKSTYLE_ERROR != null){
+      
+    }
+    DISCHECKSTYLE_ERROR.close();
+    
+                return rows.poll();
+        }
 int _A =0;
   if(_A != 0){_A=1;}
   else if(_A==0)_A=2;else{_A=3;}
